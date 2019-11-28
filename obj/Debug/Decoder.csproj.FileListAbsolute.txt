@@ -1,0 +1,16 @@
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\Decoder.exe.config
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\Decoder.exe
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\Decoder.pdb
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\EntityFramework.dll
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\System.Data.SQLite.dll
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\EntityFramework.xml
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\System.Data.SQLite.xml
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\obj\Debug\Decoder.csproj.CoreCompileInputs.cache
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\obj\Debug\Decoder.csproj.CopyComplete
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\obj\Debug\Decoder.exe
+C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\obj\Debug\Decoder.pdb
