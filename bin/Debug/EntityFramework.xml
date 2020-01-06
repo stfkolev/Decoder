@@ -23761,6 +23761,23 @@
             <param name="message">The message that describes the error.</param>
             <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
         </member>
+        <member name="M:System.Data.Entity.Core.Query.InternalTrees.BitVec.GetArrayLength(System.Int32,System.Int32)">
+            <summary>
+            Used for conversion between different representations of bit array. 
+            Returns (n+(div-1))/div, rearranged to avoid arithmetic overflow. 
+            For example, in the bit to int case, the straightforward calc would 
+            be (n+31)/32, but that would cause overflow. So instead it's 
+            rearranged to ((n-1)/32) + 1, with special casing for 0.
+            
+            Usage:
+            GetArrayLength(77, BitsPerInt32): returns how many ints must be 
+            allocated to store 77 bits.
+            </summary>
+            <param name="n">length of array</param>
+            <param name="div">use a conversion constant, e.g. BytesPerInt32 to get
+            how many ints are required to store n bytes</param>
+            <returns>length of the array</returns>
+        </member>
         <member name="M:System.Data.Entity.Core.Query.PlanCompiler.TransformationRulesContext.IncludeCustomFunctionOp(System.Data.Entity.Core.Query.InternalTrees.Node,System.Collections.Generic.Dictionary{System.Data.Entity.Core.Query.InternalTrees.Var,System.Data.Entity.Core.Query.InternalTrees.Node})">
             <summary>
             Is this tree uses user-defined functions

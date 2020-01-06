@@ -16,6 +16,7 @@ using SearchOption = System.IO.SearchOption;
 
 namespace Decoder
 {
+
     public class Decryptor
     {
         #region Fields
