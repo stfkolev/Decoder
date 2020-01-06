@@ -18,3 +18,10 @@ There are a couple of Flags:
 * TRANS flag is for transcriptions(subtitles).
 * RM flag is for removing the courses from the database, after decrypting
 * OUT flag is for the output directory, where the videos with subtitles will be saved
+
+# GUI Version
+
+A new GUI Version has been added to easily do the above steps in a couple of clicks.
+
+# Screenshot
+![Image of GUI](https://i.imgur.com/JgcVJ0k.png)
