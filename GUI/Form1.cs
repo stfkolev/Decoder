@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 using MetroFramework.Forms;
 
 namespace GUI
 {
     public partial class Form1 : MetroForm
     {
+        private readonly ManualResetEvent iResetEvent = new ManualResetEvent(false);
+
         private string psPath;
         private string outputPath;
         
@@ -27,11 +30,12 @@ namespace GUI
             this.metroPanel2.Location = new Point(this.metroPanel2.Location.X, 0);
             
             this.ShadowType = MetroFormShadowType.AeroShadow;
+
             Transitions.Transition iTransition = new Transitions.Transition(new Transitions.TransitionType_Deceleration(1000));
+
             iTransition.add(this.metroTabControl1, "Left", this.Width - 777);
             iTransition.add(this.metroPanel2, "Top", this.Height - 422);
             iTransition.run();
-
         }
 
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
@@ -81,15 +85,15 @@ namespace GUI
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(this.outputPath) && !string.IsNullOrWhiteSpace(this.psPath))
+            if (!string.IsNullOrWhiteSpace(this.outputPath) && !string.IsNullOrWhiteSpace(this.psPath))
             {
                 var iDecryptorOptions = new Decoder.Option.DecryptorOptions();
 
-                iDecryptorOptions.InputPath = this.psPath;
+                iDecryptorOptions.InputPath = this.psPath + "\\courses";
                 iDecryptorOptions.DatabasePath = this.psPath + "\\pluralsight.db";
                 iDecryptorOptions.OutputPath = this.outputPath;
 
-                if(this.useDatabaseCheckbox.Checked)
+                if (this.useDatabaseCheckbox.Checked)
                 {
                     iDecryptorOptions.UseDatabase = true;
                 }
@@ -99,16 +103,31 @@ namespace GUI
                     iDecryptorOptions.CreateTranscript = true;
                 }
 
+                if (this.removeFolderCheckbox.Checked)
+                {
+                    iDecryptorOptions.RemoveFolderAfterDecryption = true;
+                }
+
                 var iDecryptor = new Decoder.Decryptor(iDecryptorOptions);
 
                 this.metroProgressSpinner1.Visible = true;
-                iDecryptor.DecryptAllFolders(iDecryptorOptions.InputPath, iDecryptorOptions.OutputPath);
 
-                this.metroProgressSpinner1.Visible = false;
-                this.metroLabel5.Text = "The decryption has been completed!";
-                this.metroLabel5.Visible = true;
+                Task.Factory.StartNew(async () =>
+                {
+                    await iDecryptor.DecryptAllFolders(iDecryptorOptions.InputPath, iDecryptorOptions.OutputPath);
+                    this.metroProgressSpinner1.Visible = false;
+                    this.metroLabel5.Text = "The decryption has been completed!";
+                    this.metroLabel5.Visible = true;
+                    var iTimer = new System.Timers.Timer();
+                    iTimer.Interval = 3000;
 
+                    iTimer.Elapsed += (iSeconds, en) =>
+                    {
+                        this.metroLabel5.Visible = false;
+                    };
 
+                    iTimer.Start();
+                }, TaskCreationOptions.LongRunning);
             }
         }
     }

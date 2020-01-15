@@ -90,7 +90,7 @@ namespace Decoder
         /// </summary>
         /// <param name="folderPath">Source path contains all courses</param>
         /// <param name="outputFolder">Destination of output course</param>
-        public void DecryptAllFolders(string folderPath, string outputFolder = "")
+        public async Task DecryptAllFolders(string folderPath, string outputFolder = "")
         {
             if (!Directory.Exists(folderPath))
             {
@@ -151,11 +151,14 @@ namespace Decoder
                         {
                             // Generate module hash name
                             string moduleHash = ModuleHash(module.ModuleName, module.AuthorHandle);
+
                             // Generate module path
                             string moduleHashPath = Path.Combine(coursePath, moduleHash);
+
                             // Create new module path with decryption name
                             string newModulePath = Path.Combine(courseInfo.FullName,
                                 module.ModuleIndex + ". " + module.ModuleTitle);
+
                             // If length too long, rename it
                             if (newModulePath.Length > 240)
                             {
@@ -168,6 +171,7 @@ namespace Decoder
                                 DirectoryInfo moduleInfo = Directory.Exists(newModulePath)
                                     ? new DirectoryInfo(newModulePath)
                                     : Directory.CreateDirectory(newModulePath);
+
                                 // Decrypt all videos in current module folder
                                 DecryptAllVideos(moduleHashPath, module, moduleInfo.FullName);
                             }
@@ -177,6 +181,8 @@ namespace Decoder
                                     "Folder " + moduleHash +
                                     " cannot be found in the current course path.",
                                     ConsoleColor.Red);
+
+                                
                             }
                         }
                     }
