@@ -15,11 +15,11 @@ C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\obj\Debug\Decoder.csproj.Copy
 C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\obj\Debug\Decoder.exe
 C:\Users\Stefan.Kolev\source\repos\Decoder\Decoder\obj\Debug\Decoder.pdb
 C:\Users\my\source\repos\decoder\obj\Debug\Decoder.csproj.CoreCompileInputs.cache
-C:\Users\my\source\repos\decoder\bin\Debug\Decoder.exe.config
-C:\Users\my\source\repos\decoder\bin\Debug\Decoder.exe
 C:\Users\my\source\repos\decoder\bin\Debug\Decoder.pdb
 C:\Users\my\source\repos\decoder\bin\Debug\EntityFramework.dll
 C:\Users\my\source\repos\decoder\bin\Debug\EntityFramework.xml
 C:\Users\my\source\repos\decoder\obj\Debug\Decoder.csproj.CopyComplete
-C:\Users\my\source\repos\decoder\obj\Debug\Decoder.exe
 C:\Users\my\source\repos\decoder\obj\Debug\Decoder.pdb
+C:\Users\my\source\repos\decoder\bin\Debug\Decoder.dll.config
+C:\Users\my\source\repos\decoder\bin\Debug\Decoder.dll
+C:\Users\my\source\repos\decoder\obj\Debug\Decoder.dll

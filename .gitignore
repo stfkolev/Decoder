@@ -2,3 +2,9 @@ packages
 obj
 bin
 .vs
+GUI\bin
+GUI\obj
+obj/Debug/Decoder.exe
+obj/Debug/Decoder.pdb
+bin/Debug/Decoder.exe.config
+bin/Debug/Decoder.exe

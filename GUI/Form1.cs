@@ -118,17 +118,34 @@ namespace GUI
                     this.metroProgressSpinner1.Visible = false;
                     this.metroLabel5.Text = "The decryption has been completed!";
                     this.metroLabel5.Visible = true;
-                    var iTimer = new System.Timers.Timer();
-                    iTimer.Interval = 3000;
 
-                    iTimer.Elapsed += (iSeconds, en) =>
-                    {
-                        this.metroLabel5.Visible = false;
-                    };
+                    await setTimeout(this.metroLabel5, 3000);
 
-                    iTimer.Start();
                 }, TaskCreationOptions.LongRunning);
+            } else
+            {
+                this.metroLabel5.Text = "There was an error. Check paths!";
+                this.metroLabel5.Style = MetroFramework.MetroColorStyle.Red;
+                this.metroLabel5.Visible = true;
+
+                Task.Factory.StartNew(async () =>
+                {
+                    await setTimeout(this.metroLabel5, 3000);
+                });
             }
+        }
+
+        public static async Task setTimeout(MetroFramework.Controls.MetroLabel iLabel, long iTime)
+        {
+            var iTimer = new System.Timers.Timer();
+            iTimer.Interval = iTime;
+
+            iTimer.Elapsed += (iSeconds, en) =>
+            {
+                iLabel.Visible = false;
+            };
+
+            await Task.Run( () => iTimer.Start());
         }
     }
 }

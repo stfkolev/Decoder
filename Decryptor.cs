@@ -173,7 +173,7 @@ namespace Decoder
                                     : Directory.CreateDirectory(newModulePath);
 
                                 // Decrypt all videos in current module folder
-                                DecryptAllVideos(moduleHashPath, module, moduleInfo.FullName);
+                                await Task.Run(() => DecryptAllVideos(moduleHashPath, module, moduleInfo.FullName));
                             }
                             else
                             {

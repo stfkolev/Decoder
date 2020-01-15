@@ -35,6 +35,8 @@
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.downloadTab = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -45,8 +47,6 @@
             this.createSubsCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.useOutputFolderCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.useDatabaseCheckbox = new MetroFramework.Controls.MetroCheckBox();
-            this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
@@ -131,6 +131,26 @@
             this.downloadTab.TabIndex = 0;
             this.downloadTab.Text = "Download";
             this.downloadTab.VerticalScrollbarBarColor = true;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(93, 168);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel5.TabIndex = 15;
+            this.metroLabel5.Text = "metroLabel5";
+            this.metroLabel5.UseStyleColors = true;
+            this.metroLabel5.Visible = false;
+            // 
+            // metroProgressSpinner1
+            // 
+            this.metroProgressSpinner1.Location = new System.Drawing.Point(86, 167);
+            this.metroProgressSpinner1.Maximum = 100;
+            this.metroProgressSpinner1.Name = "metroProgressSpinner1";
+            this.metroProgressSpinner1.Size = new System.Drawing.Size(40, 23);
+            this.metroProgressSpinner1.TabIndex = 14;
+            this.metroProgressSpinner1.Visible = false;
             // 
             // metroButton1
             // 
@@ -243,26 +263,6 @@
             this.useDatabaseCheckbox.TabIndex = 4;
             this.useDatabaseCheckbox.Text = "Use Database";
             this.useDatabaseCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // metroProgressSpinner1
-            // 
-            this.metroProgressSpinner1.Location = new System.Drawing.Point(86, 167);
-            this.metroProgressSpinner1.Maximum = 100;
-            this.metroProgressSpinner1.Name = "metroProgressSpinner1";
-            this.metroProgressSpinner1.Size = new System.Drawing.Size(40, 23);
-            this.metroProgressSpinner1.TabIndex = 14;
-            this.metroProgressSpinner1.Visible = false;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(93, 168);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel5.TabIndex = 15;
-            this.metroLabel5.Text = "metroLabel5";
-            this.metroLabel5.UseStyleColors = true;
-            this.metroLabel5.Visible = false;
             // 
             // Form1
             // 
