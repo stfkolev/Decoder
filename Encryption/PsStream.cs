@@ -19,7 +19,7 @@ namespace Decoder.Encryption
         {
             get
             {
-                return 262144;
+                return 0x40000;
             }
         }
 
