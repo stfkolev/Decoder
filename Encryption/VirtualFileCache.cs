@@ -16,9 +16,10 @@ namespace Decoder.Encryption
             }
         }
 
+
         public VirtualFileCache(string encryptedVideoFilePath)
         {
-            this.encryptedVideoFile = (IPsStream)new PsStream(encryptedVideoFilePath);
+            this.encryptedVideoFile = new PsStream(encryptedVideoFilePath);
         }
 
         public VirtualFileCache(IPsStream stream)
@@ -28,14 +29,18 @@ namespace Decoder.Encryption
 
         public void Read(byte[] pv, int offset, int count, IntPtr pcbRead)
         {
-            if (this.Length == 0L)
-                return;
-            this.encryptedVideoFile.Seek(offset, SeekOrigin.Begin);
-            int length = this.encryptedVideoFile.Read(pv, 0, count);
-            VideoEncryption.XorBuffer(pv, length, (long)offset);
-            if (!(IntPtr.Zero != pcbRead))
-                return;
-            Marshal.WriteIntPtr(pcbRead, new IntPtr(length));
+            if (this.Length != 0)
+            {
+                this.encryptedVideoFile.Seek(offset, SeekOrigin.Begin);
+                int length = this.encryptedVideoFile.Read(pv, 0, count);
+
+                VideoEncryption.DecryptBuffer(pv, length, (long)offset);
+
+                if (IntPtr.Zero != pcbRead)
+                {
+                    Marshal.WriteIntPtr(pcbRead, new IntPtr(length));
+                }
+            }
         }
 
         public void Dispose()
