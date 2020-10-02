@@ -1,3 +1,8 @@
+# Project close-up
+***Since this started out of interest on how to reverse engineer and so on, I've decided just today to close up this project due to legal issues. I've understood that the hours of work the people(lectors) of Pluralsight have put into their course, in order to be with such a quality is enormous. Neither I am paying their wage, nor do something to support them. From now on, this project will be archived in three days and will be closed forever. 
+
+Best Regards!***
+
 # Decoder
 Decodes PSV files.
 
